@@ -2,7 +2,7 @@ function Pokemon(nombre,color,podeDeAtaque){
 	this.nombre=nombre;
 	this.color=color;
 	this.nivelDeAmistad=0;
-	this.vida = 0;
+	this.vida = 100;
 	this.podeDeAtaque = podeDeAtaque;
 
 	this.mostrarPokemon= function(){
