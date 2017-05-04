@@ -5,6 +5,33 @@
 	<title>Poke Stadium</title>
 </head>
 <body>
-	<h3>Poke Stadium</h3>
+	<div id="contenedor">
+		<h2>Poke Stadium</h3>
+<!-- codigo jugador 1 -->
+		<h4>Player 1</h4>
+		<select id="play1" required="" onchange="imprimirP1()">
+             <option value="" disabled selected>Escoge tu pokemon</option>
+             <option>Pikachu</option>
+             <option>Charmander</option>
+             <option>Squartle</option>
+             <option>Chanchicornio</option>
+         </select>
+         <p id="imp1"><!--texto dinamico--></p>
+
+<!-- codigo jugador 2 -->
+		<h4>Player 2</h4>
+		<select id="play2" required="" onchange="imprimirP2()">
+             <option value="" disabled selected>Escoge tu pokemon</option>
+             <option>Pikachu</option>
+             <option>Charmander</option>
+             <option>Squartle</option>
+             <option>Chanchicornio</option>
+         </select>
+         <p id="imp2"><!--texto dinamico--></p>
+
+		<br/><br/>
+        <button type="button" onclick="pelear();">Pelea!</button>
+		<p id="resultadoPelea"></p>
+	</div>
 	<script src="assets/js/pokemon.js" type="text/javascript"></script>
 </body>
