@@ -16,13 +16,22 @@ function Pokemon(nombre,color,poderDeAtaque){
 	}
 }
 
+const pokeDex=[];
+
 const Pikachu = new Pokemon("Pikachu","amarillo",100);
+pokedex.push(Pikachu);
 const Charmander = new Pokemon("Charmander","rojo",20);
+pokedex.push(Charmander);
+const Squartle = new Pokemon("Squartle","celeste",70);
+pokedex.push(Squartle);
+const Chanchicornio = new Pokemon("Chanchicornio","rosa",1000);
+pokedex.push(Chanchicornio);
 
 //---------------------------------------------------------------
 
 Pikachu.atacar(Charmander);
-console.log(Charmander.vida);
+document.write(Charmander.vida);
+
 
 //imprimir en pantalla ----------------
 
@@ -31,6 +40,7 @@ function imprimirP1(){
     var valor1=document.getElementById("play1").value;
     var mostrar1=document.getElementById("imp1");
     mostrar1.innerHTML="Has elegido a " + valor1;
+
 }
 
 //mostrar player 2
@@ -40,14 +50,15 @@ function imprimirP2(){
     mostrar2.innerHTML="Has elegido a " + valor2;
 }
 
+
 //boton que hace todo
-function pelear(jugador1,jugador2){
+/*function pelear(jugador1,jugador2){
 	var seleccion1=document.getElementById("play1").value;
 	var seleccion2=document.getElementById("play2").value;
 
-	seleccion1 =
-	jugador1.atacar(jugador2);
 
-	var tablaResult=document.getElementById("resultadoPelea");
-	tablaResult.innerHTML= jugador1.name + " ataca con " + jugador1.poderDeAtaque;
-}
+	var resultado= seleccion1.atacar(seleccion2);
+
+	var tablaResultado=document.getElementById("resultadoPelea");
+	tablaResultado.innerHTML=resultado;
+}*/
