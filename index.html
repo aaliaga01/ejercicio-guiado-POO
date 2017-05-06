@@ -3,14 +3,15 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Poke Stadium</title>
+    <link rel="stylesheet" type="text/css" href="assets/css/estilos.css">
 </head>
 <body>
 	<div id="contenedor">
 		<h2>Poke Stadium</h3>
 <!-- codigo jugador 1 -->
 		<h4>Player 1</h4>
-		<select id="play1" required="" onchange="imprimirP1()">
-             <option value="" disabled selected>Escoge tu pokemon</option>
+		<select id="play1" onchange="imprimirP1()">
+             <option value="" disabled selected>Escoge pokemon 1</option>
              <option>Pikachu</option>
              <option>Charmander</option>
              <option>Squartle</option>
@@ -21,7 +22,7 @@
 <!-- codigo jugador 2 -->
 		<h4>Player 2</h4>
 		<select id="play2" required="" onchange="imprimirP2()">
-             <option value="" disabled selected>Escoge tu pokemon</option>
+             <option value="" disabled selected>Escoge pokemon 2</option>
              <option>Pikachu</option>
              <option>Charmander</option>
              <option>Squartle</option>

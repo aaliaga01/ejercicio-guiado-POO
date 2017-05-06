@@ -1,12 +1,13 @@
-function Pokemon(nombre,color,poderDeAtaque){
+function Pokemon(nombre,color,poderDeAtaque,vida){
 	this.nombre=nombre;
 	this.color=color;
 	this.nivelDeAmistad=0;
-	this.vida = 100;
+	this.vida = vida;
 	this.poderDeAtaque = poderDeAtaque;
 
 	this.mostrarPokemon= function(){
-		return("Hola, soy " + this.nombre + ", mi color es " + this.color + " y mi poder de ataque es " + this.poderDeAtaque)
+		return("Hola, soy " + this.nombre + ", mi color es " + this.color + ", mi poder de ataque es " + this.poderDeAtaque
+			+ " y mi vida es " + this.vida)
 	}
 	this.aumentarAmistad = function(valor){
 		this.nivelDeAmistad = this.nivelDeAmistad + valor;
@@ -16,27 +17,25 @@ function Pokemon(nombre,color,poderDeAtaque){
 	}
 }
 
-
 const pokeDex=[];
-const arena=[];
 
-	const Pikachu = new Pokemon("Pikachu","amarillo",100);
+	const Pikachu = new Pokemon("Pikachu","amarillo",100,250);
 	pokeDex.push(Pikachu);
-	const Charmander = new Pokemon("Charmander","rojo",20);
+	const Charmander = new Pokemon("Charmander","rojo",20,220);
 	pokeDex.push(Charmander);
-	const Squartle = new Pokemon("Squartle","celeste",70);
+	const Squartle = new Pokemon("Squartle","celeste",70,220);
 	pokeDex.push(Squartle);
-	const Chanchicornio = new Pokemon("Chanchicornio","rosa",1000);
+	const Chanchicornio = new Pokemon("Chanchicornio","rosa",1000,1100);
 	pokeDex.push(Chanchicornio);
+
+//---------------------------------------------------------------
+/* Ejercicio Guiado.-
+Pikachu.atacar(Charmander);
+console.log(Charmander.vida);
+*/
 //---------------------------------------------------------------
 
-Pikachu.atacar(Charmander);
-conole.log(Charmander.vida);
-
-
 //imprimir en pantalla ----------------
-
-
 //mostrar player 1
 function imprimirP1(){
     var valor1=document.getElementById("play1").value;
@@ -48,7 +47,7 @@ function imprimirP1(){
     		return mostrar1.innerHTML=valor.mostrarPokemon();
     	}else{"Escoge un pokemon"}
     	
-    })
+    });
     
 }
 imprimirP1();
@@ -64,23 +63,34 @@ function imprimirP2(){
     		return mostrar2.innerHTML=valor.mostrarPokemon();
     	}else{"Escoge un pokemon"}
     	
-    })
+    });
 }
 imprimirP2();
 
-
+//Boton de pelear
 function pelear(){
 	var player1=document.getElementById("play1").value;
 	var player2=document.getElementById("play2").value;
 
-	pokeDex.forEach(function(valor){
-		if (player1==valor.nombre) {
-			arena.push(pokeDex[valor]);
+	var poke1=pokeDex.filter(function(valor){
+		return valor.nombre == player1;
+		})[0];
+
+	var poke2=pokeDex.filter(function(valor){
+		return valor.nombre == player2;
+		})[0];
+
+	if(poke1 === poke2){
+		alert("No puedes pelear contra el mismo pokemon");
+	}else if (poke2.vida <= 0){
+			poke2.vida=0;
+			alert(poke2.nombre + " ha sido derrotado ¡" + poke1.nombre + " ha ganado!");
+
 		}
-	});
 
-	arena[0].atacar(arena[1]);
+	poke1.atacar(poke2);
 
-	document.getElementById("resultadoPelea").innerHTML=arena.length;
+	var resultado=document.getElementById("resultadoPelea");
+	resultado.innerHTML= poke1.nombre + " atacó a " + poke2.nombre + "<br/>" + poke2.nombre + " tiene una vida de " + poke2.vida;
 }
 pelear();
