@@ -1,3 +1,4 @@
 # ejercicio-guiado-POO
 Ejercicio guiado de programación orientada a objetos.
-Empezando ejercicio pokemonen. Tratando de clonar el repositorio
+Empezando ejercicio pokemon. Tratando de clonar el repositorio.
+Se termina ejercicio y se envia atrasado.
